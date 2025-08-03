@@ -36,12 +36,12 @@ Or download the npz from this repo : https://github.com/bregydoc/bcidatasetIV2a
    pip install numpy scikit-learn matplotlib  # plus any extras you need
    ```
 
-2. **Train & test NovaNet (LATCNet) on dataset 2a in leave‑one‑subject‑out mode**
+2. **Train & test LATCNET on dataset 2a in leave‑one‑subject‑out mode**
 
    ```bash
    python train_val.py \
           --dataset a \
-          --model LATCNet \
+          --model GATCNet \
           --training-mode loso \
           --epochs 600 \
           --batch-size 64 \
