@@ -1,12 +1,12 @@
-# GATCNet – EEG Motor‑Imagery Benchmarks
+# LATCNet – EEG Motor‑Imagery Benchmarks
 
-This repository contains **GATCNet**—a novel network—together with a training pipeline and several baseline CNN/TCN architectures for the BCI Competition IV 2a & 2b motor‑imagery datasets.
+This repository contains **LATCNet**—a novel network—together with a training pipeline and several baseline CNN/TCN architectures for the BCI Competition IV 2a & 2b motor‑imagery datasets.
 
 ---
 ## Directory layout
 
 ```
-GITHUB_GATCNET/
+GITHUB_LATCNET/
 ├── BCICIV2a/            # original .gdf exported to .mat (if you have them)
 │   ├── T/               # training sessions  (A01T.mat … A09T.mat)
 │   └── E/               # evaluation sessions (A01E.mat … A09E.mat)
@@ -16,7 +16,7 @@ GITHUB_GATCNET/
 ├── BCICIV2b/            # dataset 2b (.mat files organised the same way)
 │   ├── T/
 │   └── E/
-├── models/              # model definitions (EEGNet, DeepConvNet, …, GATCNet)
+├── models/              # model definitions (EEGNet, DeepConvNet, …, LATCNet)
 ├── data_utils.py        # data‑loading helpers
 ├── train_val.py         # **main training / evaluation script**
 └── …
@@ -30,18 +30,18 @@ Or download the npz from this repo : https://github.com/bregydoc/bcidatasetIV2a
 1. **Create a Conda/virtualenv and install requirements**
 
    ```bash
-   conda create -n gatcnet python=3.10
-   conda activate gatcnet
+   conda create -n latcnet python=3.10
+   conda activate latcnet
    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121  # or cpu version
    pip install numpy scikit-learn matplotlib  # plus any extras you need
    ```
 
-2. **Train & test NovaNet (GATCNet) on dataset 2a in leave‑one‑subject‑out mode**
+2. **Train & test NovaNet (LATCNet) on dataset 2a in leave‑one‑subject‑out mode**
 
    ```bash
    python train_val.py \
           --dataset a \
-          --model GATCNet \
+          --model LATCNet \
           --training-mode loso \
           --epochs 600 \
           --batch-size 64 \
